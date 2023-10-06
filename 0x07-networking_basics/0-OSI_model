@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #definition of the OSI model and its organization
-3
-2
+[ "$2" ]
+[ "$2" ]
