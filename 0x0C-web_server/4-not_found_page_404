@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+#a Bash script that configures a new Ubuntu machine
+
+apt-get update
+
+#to install ngix
+apt-get -y install nginx
+
+#the html page
+echo "Hello World!" > /var/www/html/index.html
+
+HTTP 404 Error code
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+
+#nginx listening to port 80
+echo "server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+	root /var/www/html;
+	index index.html
+	server_name_;
+	location / {
+		try_files \$uri \$uri/ =404;
+	}
+	error_page 404 /404.html;
+	location = /404.html {
+		internal;
+	}
+	
+	location = /index.html {
+        try_files \$uri =404;
+    }
+}" > /etc/nginx/sites-available/default
+
+service nginx restart
