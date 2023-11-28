@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+#debugging web stack code
+
+#connecting to docker
+docker exec -it holbertonschool/265-0 /bin/bash
+
+#going to the apache directory
+cd /etc/apache2/
+
+#editing the virtual host configuration
+vi sites-available/000-default.conf
+
+#ensuring Documentroot points to the right directory
+DocumentRoot /var/www/html
+
+#creating a html file
+cd /var/www/html
+echo "Hello Holberton" > index.html
+
+#restarting apache
+service apache2 restart
+
+#exiting the shell container
+exit
