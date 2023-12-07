@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#connecting to load-balancer 1
+
+ssh ubuntu@52.91.126.136 -i ~/.ssh/id_rsa
