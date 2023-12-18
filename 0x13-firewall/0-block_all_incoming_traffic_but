@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+#using the firewall to block incoming traffic except on ports 22, 443 and 80
+
+#installing ufw if it doesn't exist
+sudo apt-get install ufw
+
+#blocking incoming traffic
+sudo ufw default deny incoming
+
+#allow incoming traffic on port 22
+sudo ufw allow 22/tcp
+
+#allow incoming traffic on port 443
+sudo ufw allow 443/tcp
+
+#allow incoming traffic from port 80
+sudo ufw allow 80/tcp
+
+#enable the ufw
+sudo ufw enable
+
+#check the status of ufw
+sudo ufw status
