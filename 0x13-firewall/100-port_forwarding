@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#port forwarding using ufw
+
+#entering the rules configurating file for ufw
+sudo vi /etc/ufw/before.rules
+
+#adding the port forwarding commands
+*nat
+:PREROUTING ACCEPT [0:0]
+-A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80
+COMMIT
+
+#reloading ufw
+sudo ufw reload
