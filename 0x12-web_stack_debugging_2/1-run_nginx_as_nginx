@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#a bash script that changes the user from root to nginx
+
+#replacing the default nginx user in the configuration
+sed -i 's/user\s*nginx;/user nginx;/g' /etc/nginx/nginx.conf
+
+#ensuring that nginx has the necessary permissions
+chown -R nginx:nginx /var/www/html /var/log/nginx /var/lib/nginx
+
+#modifying the default nginx server to listen on port 8080
+sed -i 's/listen\s*80;/listen 8080;/g' /etc/nginx/sites-available/default
+
+#restarting nginx to apply these changes
+service nginx restart
+
+#verifying the configuration process
+ps auxff | grep ngin[x]
