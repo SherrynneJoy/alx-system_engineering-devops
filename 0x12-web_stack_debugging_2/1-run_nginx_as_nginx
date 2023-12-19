@@ -14,4 +14,4 @@ sed -i 's/listen\s*80;/listen 8080;/g' /etc/nginx/sites-available/default
 service nginx restart
 
 #verifying the configuration process
-ps auxff | grep ngin[x]
+pgrep -f 'ngin[x]'
