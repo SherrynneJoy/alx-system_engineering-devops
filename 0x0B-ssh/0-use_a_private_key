@@ -1,9 +1,4 @@
 #!/usr/bin/env bash
 #a Bash script that uses ssh to connect to your server using the private
 
-ip_address=54.208.105.52
-user="ubuntu"
-private_key="~/.ssh/school"
-private_key_path=$(eval echo $private_key)
-
-ssh -i "$private_key_path" $user@$ip_address
+ssh ubuntu -i ~/.ssh/school
