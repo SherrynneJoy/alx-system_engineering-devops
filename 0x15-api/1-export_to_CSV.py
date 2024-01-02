@@ -38,4 +38,9 @@ if __name__ == "__main__":
     todos_response = requests.get(url + "todos",
                                   params={"userId": employee_id})
     todos = todos_response.json()
+    finished = [todo["title"] for todo in todos if todo.get("completed")]
+
+    """print("Employee {} is done with tasks({}/{}):".format(user.get("name"),
+                                                          len(finished),
+                                                          len(todos)))"""
     using_csv(employee_id, user, todos)
