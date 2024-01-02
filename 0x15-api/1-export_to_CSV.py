@@ -13,7 +13,8 @@ def using_csv(user_id, user, todos):
     with open(filename, mode="w", newline='') as f:
         fieldnames = ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS",
                       "TASK_TITLE"]
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer = csv.DictWriter(f, fieldnames=fieldnames,
+                                quoting=csv.QUOTE_ALL)
 
         writer.writeheader()
         for todo in todos:
