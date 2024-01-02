@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """A Python script that, using a REST API, for a given employee ID, returns
 information about his/her TODO list progress and exports data in CSV format"""
-import sys
-import requests
 import csv
+import requests
+import sys
 
 
 def using_csv(user_id, user, todos):
