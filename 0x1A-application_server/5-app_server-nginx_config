@@ -1,4 +1,5 @@
-sten 80 default_server;
+server {
+	listen 80 default_server;
         listen [::]:80 default_server;
 
         # use IP of server as domain name
